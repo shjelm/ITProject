@@ -1,0 +1,13 @@
+F:\ITProject14\ITProject14\bin\ITProject14.dll
+F:\ITProject14\ITProject14\bin\ITProject14.pdb
+F:\ITProject14\ITProject14\obj\Debug\ITProject14.dll
+F:\ITProject14\ITProject14\obj\Debug\ITProject14.pdb
+E:\ITProject14\ITProject14\bin\ITProject14.dll
+E:\ITProject14\ITProject14\bin\ITProject14.pdb
+E:\ITProject14\ITProject14\obj\Debug\ITProject14.dll
+E:\ITProject14\ITProject14\obj\Debug\ITProject14.pdb
+G:\ITProject14\ITProject14\bin\ITProject14.dll
+G:\ITProject14\ITProject14\bin\ITProject14.pdb
+G:\ITProject14\ITProject14\obj\Debug\ITProject14.dll
+G:\ITProject14\ITProject14\obj\Debug\ITProject14.pdb
+G:\ITProject14\ITProject14\obj\Debug\ITProject14.csprojResolveAssemblyReference.cache
