@@ -227,9 +227,10 @@ namespace ITProject14.App_Code.DAL
                     MySqlCommand cmd = new MySqlCommand("InsertPost", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
+
                     // Lägger till de paramterar den lagrade proceduren kräver. Använder här det effektiva sätttet att
                     // göra det på - något "svårare" men ASP.NET behöver inte "jobba" så mycket.
-                    cmd.Parameters.Add("@MemberId", MySqlDbType.Int32, 4).Value = post.MemberId;
+                    cmd.Parameters.Add("@Id", MySqlDbType.Int32, 4).Value = post.MemberId;
                     cmd.Parameters.Add("@Value", MySqlDbType.VarChar, 500).Value = post.Value;
 
                     // Den här parametern är lite speciell. Den skickar inte något data till den lagrade proceduren,
@@ -246,6 +247,7 @@ namespace ITProject14.App_Code.DAL
                     cmd.ExecuteNonQuery();
 
                     // Hämtar primärnyckelns värde för den nya posten och tilldelar Member-objektet värdet.
+                    //Varför får jag null-värde här? Har ingen out parameter för postid
                     post.PostId = (int)cmd.Parameters["@PostId"].Value;
                 }
                 catch
