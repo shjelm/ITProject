@@ -13,12 +13,12 @@ namespace ITProject14 {
     public partial class Create {
         
         /// <summary>
-        /// MemberEdit control.
+        /// PostEdit1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ITProject14.Shared.UserControls.MemberEdit MemberEdit;
+        protected global::ITProject14.Shared.UserControls.PostEdit PostEdit1;
     }
 }

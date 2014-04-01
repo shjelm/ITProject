@@ -11,11 +11,11 @@ using ITProject14.App_Code.BLL;
 
 namespace ITProject14.Shared.UserControls
 {
-    public partial class ContactEdit : System.Web.UI.UserControl
+    public partial class CommentEdit : System.Web.UI.UserControl
     {
         #region Händelser
 
-        public event EventHandler ContactChanged;
+        public event EventHandler CommentChanged;
 
         #endregion
 
@@ -29,45 +29,45 @@ namespace ITProject14.Shared.UserControls
         //{
         //    get
         //    {
-        //        return ContactMultiView.ActiveViewIndex == 1;
+        //        return CommentMultiView.ActiveViewIndex == 1;
         //    }
 
         //    set
         //    {
-        //        ContactMultiView.ActiveViewIndex = value ? 1 : 0;
+        //        CommentMultiView.ActiveViewIndex = value ? 1 : 0;
         //    }
         //}
 
         #endregion
 
-        #region ContactDataSource
+        #region CommentDataSource
 
         /// <summary>
-        /// TODO: Skriv beskrivning till ContactDataSource_Selected.
+        /// TODO: Skriv beskrivning till CommentDataSource_Selected.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void ContactDataSource_Selected(object sender, ObjectDataSourceStatusEventArgs e)
+        protected void CommentDataSource_Selected(object sender, ObjectDataSourceStatusEventArgs e)
         {
             if (e.Exception != null)
             {
-                AddErrorMessage(Strings.Contact_Selecting_Error);
+                AddErrorMessage(Strings.Post_Selecting_Error);
                 e.ExceptionHandled = true;
             }
         }
 
         /// <summary>
-        /// TODO: Skriv beskrivning till ContactDataSource_Inserting.
+        /// TODO: Skriv beskrivning till PostDataSource_Inserting.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void ContactDataSource_Inserting(object sender, ObjectDataSourceMethodEventArgs e)
+        protected void CommenttDataSource_Inserting(object sender, ObjectDataSourceMethodEventArgs e)
         {
-            var contact = e.InputParameters[0] as Post;
+            var contact = e.InputParameters[0] as Comment;
 
             if (contact == null)
             {
-                AddErrorMessage(Strings.Contact_Inserting_Unexpected_Error);
+                AddErrorMessage(Strings.Post_Inserting_Unexpected_Error);
                 e.Cancel = true;
             }
             else if (!contact.IsValid)
@@ -78,95 +78,95 @@ namespace ITProject14.Shared.UserControls
         }
 
         /// <summary>
-        /// TODO: Skriv beskrivning till ContactDataSource_Inserted.
+        /// TODO: Skriv beskrivning till PostDataSource_Inserted.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void ContactDataSource_Inserted(object sender, ObjectDataSourceStatusEventArgs e)
+        protected void CommentDataSource_Inserted(object sender, ObjectDataSourceStatusEventArgs e)
         {
             if (e.Exception != null)
             {
-                AddErrorMessage(Strings.Contact_Inserting_Error);
+                AddErrorMessage(Strings.Post_Inserting_Error);
                 e.ExceptionHandled = true;
             }
             else
             {
-                if (ContactChanged != null)
+                if (CommentChanged != null)
                 {
-                    ContactChanged(this, EventArgs.Empty);
+                    CommentChanged(this, EventArgs.Empty);
                 }
 
-                string url = String.Format("~/Success.aspx?returnUrl=~/Edit.aspx?id={0}&action=Contact_Saved",
+                string url = String.Format("~/Success.aspx?returnUrl=~/Edit.aspx?id={0}&action=Comment_Saved",
                     Request.QueryString["id"]);
                 Response.Redirect(url, false);
             }
         }
 
         /// <summary>
-        /// TODO: Skriv beskrivning till ContactDataSource_Updating.
+        /// TODO: Skriv beskrivning till PostDataSource_Updating.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void ContactDataSource_Updating(object sender, ObjectDataSourceMethodEventArgs e)
+        protected void CommentDataSource_Updating(object sender, ObjectDataSourceMethodEventArgs e)
         {
-            var contact = e.InputParameters[0] as Post;
+            var comment = e.InputParameters[0] as Comment;
 
-            if (contact == null)
+            if (comment == null)
             {
-                AddErrorMessage(Strings.Contact_Updating_Unexpected_Error);
+                AddErrorMessage(Strings.Post_Updating_Unexpected_Error);
                 e.Cancel = true;
             }
-            else if (!contact.IsValid)
+            else if (!comment.IsValid)
             {
-                AddErrorMessage(contact);
+                AddErrorMessage(comment);
                 e.Cancel = true;
             }
         }
 
         /// <summary>
-        /// TODO: Skriv beskrivning till ContactDataSource_Updated.
+        /// TODO: Skriv beskrivning till PostDataSource_Updated.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void ContactDataSource_Updated(object sender, ObjectDataSourceStatusEventArgs e)
+        protected void CommentDataSource_Updated(object sender, ObjectDataSourceStatusEventArgs e)
         {
             if (e.Exception != null)
             {
-                AddErrorMessage(Strings.Contact_Updating_Error);
+                AddErrorMessage(Strings.Post_Updating_Error);
                 e.ExceptionHandled = true;
             }
             else
             {
-                if (ContactChanged != null)
+                if (CommentChanged != null)
                 {
-                    ContactChanged(this, EventArgs.Empty);
+                    CommentChanged(this, EventArgs.Empty);
                 }
 
-                string url = String.Format("~/Success.aspx?returnUrl=~/Edit.aspx?id={0}&action=Contact_Saved",
+                string url = String.Format("~/Success.aspx?returnUrl=~/Edit.aspx?id={0}&action=Comment_Saved",
                     Request.QueryString["id"]);
                 Response.Redirect(url, false);
             }
         }
 
         /// <summary>
-        /// TODO: Skriv beskrivning till ContactDataSource_Deleted.
+        /// TODO: Skriv beskrivning till CommentDataSource_Deleted.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void ContactDataSource_Deleted(object sender, ObjectDataSourceStatusEventArgs e)
+        protected void CommentDataSource_Deleted(object sender, ObjectDataSourceStatusEventArgs e)
         {
             if (e.Exception != null)
             {
-                AddErrorMessage(Strings.Contact_Deleting_Error);
+                AddErrorMessage(Strings.Post_Deleting_Error);
                 e.ExceptionHandled = true;
             }
             else
             {
-                if (ContactChanged != null)
+                if (CommentChanged != null)
                 {
-                    ContactChanged(this, EventArgs.Empty);
+                    CommentChanged(this, EventArgs.Empty);
                 }
-                string url = String.Format("~/Success.aspx?returnUrl=~/Edit.aspx?id={0}&action=Contact_Deleted",
+                string url = String.Format("~/Success.aspx?returnUrl=~/Edit.aspx?id={0}&action=Comment_Deleted",
                     Request.QueryString["id"]);
                 Response.Redirect(url, false);
             }
@@ -174,46 +174,46 @@ namespace ITProject14.Shared.UserControls
 
         #endregion
 
-        #region ContactTypeDataSource
+        #region CommentTypeDataSource
+
+        ///// <summary>
+        ///// TODO: Skriv beskrivning till CommentTypeDataSource_Selected.
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //protected void CommentTypeDataSource_Selected(object sender, ObjectDataSourceStatusEventArgs e)
+        //{
+        //    if (e.Exception != null)
+        //    {
+        //        AddErrorMessage(Strings.PostType_Selecting_Error);
+        //        e.ExceptionHandled = true;
+        //    }
+        //}
+
+        #endregion
+
+        #region CommentListView
 
         /// <summary>
-        /// TODO: Skriv beskrivning till ContactTypeDataSource_Selected.
+        /// TODO: Skriv beskrivning till CommentListView_ItemInserting.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void ContactTypeDataSource_Selected(object sender, ObjectDataSourceStatusEventArgs e)
+        protected void CommentListView_ItemInserting(object sender, ListViewInsertEventArgs e)
         {
-            if (e.Exception != null)
-            {
-                AddErrorMessage(Strings.ContactType_Selecting_Error);
-                e.ExceptionHandled = true;
-            }
+            e.Values["PostId"] = Request.QueryString["id"];
         }
 
         #endregion
 
-        #region ContactListView
+        #region CommentReadOnlyListView
 
         /// <summary>
-        /// TODO: Skriv beskrivning till ContactListView_ItemInserting.
+        /// TODO: Skriv beskrivning till CommentReadOnlyListView_ItemDataBound.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void ContactListView_ItemInserting(object sender, ListViewInsertEventArgs e)
-        {
-            e.Values["CustomerId"] = Request.QueryString["id"];
-        }
-
-        #endregion
-
-        #region ContactReadOnlyListView
-
-        /// <summary>
-        /// TODO: Skriv beskrivning till ContactReadOnlyListView_ItemDataBound.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //protected void ContactReadOnlyListView_ItemDataBound(object sender, ListViewItemEventArgs e)
+        //protected void CommentReadOnlyListView_ItemDataBound(object sender, ListViewItemEventArgs e)
         //{
         //    if (e.Item.ItemType == ListViewItemType.DataItem)
         //    {
@@ -222,15 +222,15 @@ namespace ITProject14.Shared.UserControls
 
         //        // ...egenskapen DataItem kan användas vilket gör det möjligt att 
         //        // hämta primärnyckelns värde...
-        //        Post currentContact = (Post)currentItem.DataItem;
+        //        Comment currentComment = (Comment)currentItem.DataItem;
 
         //        // ...som sedan kan användas för att hämta ett kontakttypobjekt...
         //        Service service = new Service();
-        //        ContactType contactType = service.GetContactTypes()
-        //            .Single(ct => ct.ContactTypeId == currentContact.ContactTypeId);
+        //        CommentType contactType = service.GetCommentTypes()
+        //            .Single(ct => ct.CommentTypeId == currentComment.CommentTypeId);
 
         //        // ...så att en beskrivning av kontaktypen kan presenteras; ex: Arbete: 012-345 67 89
-        //        Label label = (Label)e.Item.FindControl("ContactTypeNameLabel");
+        //        Label label = (Label)e.Item.FindControl("CommentTypeNameLabel");
         //        label.Text = contactType.Name + ": ";
         //    }
         //}
@@ -275,7 +275,7 @@ namespace ITProject14.Shared.UserControls
         }
 
         #endregion
-        protected void ContactReadOnlyListView_SelectedIndexChanged(object sender, EventArgs e)
+        protected void CommentReadOnlyListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

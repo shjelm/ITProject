@@ -11,3 +11,5 @@ G:\ITProject14\ITProject14\bin\ITProject14.pdb
 G:\ITProject14\ITProject14\obj\Debug\ITProject14.dll
 G:\ITProject14\ITProject14\obj\Debug\ITProject14.pdb
 G:\ITProject14\ITProject14\obj\Debug\ITProject14.csprojResolveAssemblyReference.cache
+E:\ITProject14\ITProject14\obj\Debug\ITProject14.csprojResolveAssemblyReference.cache
+F:\ITProject14\ITProject14\obj\Debug\ITProject14.csprojResolveAssemblyReference.cache

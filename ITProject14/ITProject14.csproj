@@ -34,7 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationBuildTasks" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -53,15 +56,24 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Themes\Site\site.css" />
+    <Content Include="App_Themes\Site\Site.css" />
+    <Content Include="EditPost.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="Create.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Details.aspx" />
     <Content Include="Edit.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="NotFound.aspx" />
-    <Content Include="Shared\UserControls\ContactEdit.ascx" />
+    <Content Include="Scripts\delete-confirm.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Shared\HTMLPage1.htm" />
+    <Content Include="Shared\UserControls\CommentEdit.ascx" />
     <Content Include="Shared\UserControls\MemberEdit.ascx" />
+    <Content Include="Shared\UserControls\PostEdit.ascx" />
     <Content Include="Shared\UserControls\MainMenu.ascx" />
     <Content Include="Success.aspx" />
     <Content Include="Web.config">
@@ -79,7 +91,7 @@
     <Compile Include="App_Code\DAL\CommentDAL.cs" />
     <Compile Include="App_Code\BLL\Comment.cs" />
     <Compile Include="App_Code\BLL\Post.cs" />
-    <Compile Include="App_Code\BLL\ContactType.cs" />
+    <Content Include="App_Code\BLL\ContactType.cs" />
     <Compile Include="App_Code\BLL\Member.cs" />
     <Compile Include="App_Code\DAL\PostDAL.cs" />
     <Compile Include="App_Code\BLL\Service.cs" />
@@ -90,6 +102,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="EditPost.aspx.cs">
+      <DependentUpon>EditPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditPost.aspx.designer.cs">
+      <DependentUpon>EditPost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Create.aspx.cs">
       <DependentUpon>Create.aspx</DependentUpon>
@@ -141,12 +167,12 @@
     <Compile Include="Shared\MasterPages\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Shared\UserControls\ContactEdit.ascx.cs">
-      <DependentUpon>ContactEdit.ascx</DependentUpon>
+    <Compile Include="Shared\UserControls\CommentEdit.ascx.cs">
+      <DependentUpon>CommentEdit.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Shared\UserControls\ContactEdit.ascx.designer.cs">
-      <DependentUpon>ContactEdit.ascx</DependentUpon>
+    <Compile Include="Shared\UserControls\CommentEdit.ascx.designer.cs">
+      <DependentUpon>CommentEdit.ascx</DependentUpon>
     </Compile>
     <Compile Include="Shared\UserControls\MemberEdit.ascx.cs">
       <DependentUpon>MemberEdit.ascx</DependentUpon>
@@ -154,6 +180,13 @@
     </Compile>
     <Compile Include="Shared\UserControls\MemberEdit.ascx.designer.cs">
       <DependentUpon>MemberEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\UserControls\PostEdit.ascx.cs">
+      <DependentUpon>PostEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\UserControls\PostEdit.ascx.designer.cs">
+      <DependentUpon>PostEdit.ascx</DependentUpon>
     </Compile>
     <Compile Include="Shared\UserControls\MainMenu.ascx.cs">
       <DependentUpon>MainMenu.ascx</DependentUpon>

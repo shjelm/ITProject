@@ -1,11 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Details.aspx.cs" Inherits="ITProject14.Details" %>
 
-<%@ Register src="Shared/UserControls/ContactEdit.ascx" tagname="ContactEdit" tagprefix="my" %>
+<%@ Register src="Shared/UserControls/PostEdit.ascx" tagname="PostEdit" tagprefix="my" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <h1>
-        Kunddetaljer</h1>
-    <asp:ValidationSummary ID="CustomerValidationSummary" runat="server" HeaderText="Fel inträffade. Korrigera det som är fel och försök igen."
+        Details</h1>
+    <asp:ValidationSummary ID="MemberValidationSummary" runat="server" HeaderText="Fel inträffade. Korrigera det som är fel och försök igen."
         CssClass="validation-summary-errors-icon" />
     <%-- Namn --%>
     <div class="editor-label">
@@ -36,7 +36,7 @@
         <asp:Label ID="PasswordLabel" runat="server" />
     </div>
     <%-- Kontaktuppgifter --%>
-    <my:ContactEdit ID="ContactEdit1" runat="server" />
+    <my:PostEdit ID="PostEdit1" runat="server" />
     <p>
         <asp:LinkButton ID="EditButton" runat="server">Edit</asp:LinkButton>
         <asp:LinkButton ID="DeleteButton" runat="server" OnCommand="DeleteButton_Command">Delete</asp:LinkButton></p>

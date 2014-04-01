@@ -39,7 +39,7 @@ namespace ITProject14.App_Code.DAL
         {
             // Hämtar anslutningssträngen från web.config.
             _connectionString =
-                WebConfigurationManager.ConnectionStrings["GeekCustomerConnectionString"].ConnectionString;
+                WebConfigurationManager.ConnectionStrings["GeekMemberConnectionString"].ConnectionString;
         }
 
         #endregion

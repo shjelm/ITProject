@@ -19,8 +19,8 @@ namespace ITProject14.App_Code.DAL
         /// <summary>
         /// Hämtar en kontaktuppgift.
         /// </summary>
-        /// <param name="customerId">En kontaktuppgifts nummer.</param>
-        /// <returns>Ett Contact-objekt med en kontaktuppgifter.</returns>
+        /// <param name="memberId">En kontaktuppgifts nummer.</param>
+        /// <returns>Ett Post-objekt med en kontaktuppgifter.</returns>
         public Comment GetCommentsByPostId(int postId)
         {
             // Skapar ett anslutningsobjekt.
@@ -55,16 +55,16 @@ namespace ITProject14.App_Code.DAL
                             int memberIdIndex = reader.GetOrdinal("MemberId");
                             int postIdIndex = reader.GetOrdinal("PostId");
                             int commentIdIndex = reader.GetOrdinal("CommentId");
-                            //int contactTypeIdIndex = reader.GetOrdinal("ContactTypeId");
+                            //int contactTypeIdIndex = reader.GetOrdinal("PostTypeId");
                             int valueIndex = reader.GetOrdinal("Value");
 
-                            // Returnerar referensen till de skapade Contact-objektet.
+                            // Returnerar referensen till de skapade Post-objektet.
                             return new Comment
                             {
                                 MemberId = reader.GetInt32(memberIdIndex),
                                 PostId = reader.GetInt32(postIdIndex),
                                 CommentId = reader.GetInt32(commentIdIndex),
-                                //ContactTypeId = reader.GetInt32(contactTypeIdIndex),
+                                //PostTypeId = reader.GetInt32(contactTypeIdIndex),
                                 Value = reader.GetString(valueIndex)
                             };
                         }
@@ -84,9 +84,9 @@ namespace ITProject14.App_Code.DAL
         }
 
         /// <summary>
-        /// Skapar en ny post i tabellen Contact.
+        /// Skapar en ny post i tabellen Post.
         /// </summary>
-        /// <param name="customer">Kontaktuppgift som ska läggas till.</param>
+        /// <param name="member">Kontaktuppgift som ska läggas till.</param>
         public void InsertComment(Comment comment)
         {
             // Skapar ett anslutningsobjekt.
@@ -118,7 +118,7 @@ namespace ITProject14.App_Code.DAL
                     // ExecuteNonQuery används för att exekvera den lagrade proceduren.
                     cmd.ExecuteNonQuery();
 
-                    // Hämtar primärnyckelns värde för den nya posten och tilldelar Customer-objektet värdet.
+                    // Hämtar primärnyckelns värde för den nya posten och tilldelar Member-objektet värdet.
                     comment.CommentId = (int)cmd.Parameters["@CommentId"].Value;
                 }
                 catch
@@ -130,9 +130,9 @@ namespace ITProject14.App_Code.DAL
         }
 
         /// <summary>
-        /// Uppdaterar en kunds kontaktuppgifter i tabellen Contact.
+        /// Uppdaterar en kunds kontaktuppgifter i tabellen Post.
         /// </summary>
-        /// <param name="customer">KOntaktuppgift som ska uppdateras.</param>
+        /// <param name="member">KOntaktuppgift som ska uppdateras.</param>
         public void UpdateComment(Comment comment)
         {
             // Skapar ett anslutningsobjekt.
@@ -170,7 +170,7 @@ namespace ITProject14.App_Code.DAL
         /// <summary>
         /// Tar bort en kontaktuppgift.
         /// </summary>
-        /// <param name="customerId">Kontaktuppgifts nummer.</param>
+        /// <param name="memberId">Kontaktuppgifts nummer.</param>
         public void DeleteComment(int commentId)
         {
             // Skapar ett anslutningsobjekt.
@@ -240,13 +240,13 @@ namespace ITProject14.App_Code.DAL
                             int commentIdIndex = reader.GetOrdinal("CommentId");
                             int valueIndex = reader.GetOrdinal("Value");
 
-                            // Returnerar referensen till de skapade Contact-objektet.
+                            // Returnerar referensen till de skapade Post-objektet.
                             return new Comment
                             {
                                 MemberId = reader.GetInt32(memberIdIndex),
                                 PostId = reader.GetInt32(postIdIndex),
                                 CommentId = reader.GetInt32(commentIdIndex),
-                                //ContactTypeId = reader.GetInt32(contactTypeIdIndex),
+                                //PostTypeId = reader.GetInt32(contactTypeIdIndex),
                                 Value = reader.GetString(valueIndex)
                             };
                         }

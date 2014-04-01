@@ -40,6 +40,15 @@ namespace ITProject14.Shared.MasterPages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// MainMenu1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ITProject14.Shared.UserControls.MainMenu MainMenu1;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

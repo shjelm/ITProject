@@ -27,22 +27,22 @@ namespace ITProject14.Shared.UserControls
 
         #region Fält
 
-        private int _customerId;
+        private int _memberId;
 
         #endregion
 
         #region Egenskaper
 
-        public bool ContactVisible
+        public bool PostVisible
         {
-            get { return ContactEdit1.Visible; }
-            set { ContactEdit1.Visible = value; }
+            get { return PostEdit1.Visible; }
+            set { PostEdit1.Visible = value; }
         }
 
-        public int CustomerId
+        public int MemberId
         {
-            get { return this._customerId; }
-            set { this._customerId = value; }
+            get { return this._memberId; }
+            set { this._memberId = value; }
         }
 
         public string Name
@@ -54,20 +54,20 @@ namespace ITProject14.Shared.UserControls
         //@TODO: Rätt textbox
         public string Username
         {
-            get { return AddressTextBox.Text; }
-            set { AddressTextBox.Text = value; }
+            get { return UsernameTextBox.Text; }
+            set { UsernameTextBox.Text = value; }
         }
         //@TODO: Rätt textbox
         public string Mail
         {
-            get { return PostalCodeTextBox.Text; }
-            set { PostalCodeTextBox.Text = value; }
+            get { return MailTextBox.Text; }
+            set { MailTextBox.Text = value; }
         }
         //@TODO: Rätt textbox
         public string Password
         {
-            get { return CityTextBox.Text; }
-            set { CityTextBox.Text = value; }
+            get { return PasswordTextBox.Text; }
+            set { PasswordTextBox.Text = value; }
         }
 
         #endregion
@@ -88,11 +88,11 @@ namespace ITProject14.Shared.UserControls
             {
                 try
                 {
-                    // ...skapa ett nytt Customer-objekt och initiera det
+                    // ...skapa ett nytt Member-objekt och initiera det
                     // med värdena från textfälten och...
                     Member member = new Member
                     {
-                        MemberId = CustomerId,
+                        MemberId = MemberId,
                         Name = Name,
                         Username = Username,
                         Mail = Mail,
@@ -110,7 +110,7 @@ namespace ITProject14.Shared.UserControls
 
                     // ...spara objektet.
                     Service service = new Service();
-                    service.SaveCustomer(member);
+                    service.SaveMember(member);
 
                     // Om någon abbonerar på händelsen Saved...
                     if (Saved != null)
@@ -123,7 +123,7 @@ namespace ITProject14.Shared.UserControls
                 catch
                 {
                     // ...visas ett felmeddelande.
-                    AddErrorMessage(Strings.Customer_Saving_Error);
+                    AddErrorMessage(Strings.Member_Saving_Error);
                 }
             }
         }
@@ -142,7 +142,7 @@ namespace ITProject14.Shared.UserControls
 
         #region Överskuggningar
 
-        // Ser till att CustomerId alltid sparas genom att spara den i 
+        // Ser till att MemberId alltid sparas genom att spara den i 
         // "constrol state" istället för "view state" som ju kan stängas av.
 
         protected override void LoadControlState(object savedState)
@@ -153,13 +153,13 @@ namespace ITProject14.Shared.UserControls
                 if (p != null)
                 {
                     base.LoadControlState(p.First);
-                    this._customerId = (int)p.Second;
+                    this._memberId = (int)p.Second;
                 }
                 else
                 {
                     if (savedState is int)
                     {
-                        this._customerId = (int)savedState;
+                        this._memberId = (int)savedState;
                     }
                     else
                     {
@@ -173,15 +173,15 @@ namespace ITProject14.Shared.UserControls
         {
             object obj = base.SaveControlState();
 
-            if (this._customerId != 0)
+            if (this._memberId != 0)
             {
                 if (obj != null)
                 {
-                    return new Pair(obj, this._customerId);
+                    return new Pair(obj, this._memberId);
                 }
                 else
                 {
-                    return (this._customerId);
+                    return (this._memberId);
                 }
             }
             else
@@ -204,7 +204,7 @@ namespace ITProject14.Shared.UserControls
             {
                 IsValid = false,
                 ErrorMessage = message,
-                ValidationGroup = "vgContact"
+                ValidationGroup = "vgPost"
             };
 
             Page.Validators.Add(validator);
@@ -237,7 +237,8 @@ namespace ITProject14.Shared.UserControls
     {
         #region Fält
 
-        private Member _customer;
+        private Member _member;
+        private Post _post;
 
         #endregion
 
@@ -247,16 +248,32 @@ namespace ITProject14.Shared.UserControls
         {
             get
             {
-                // Skapar en kopia av objektet som _customer refererar till. Undviker 
+                // Skapar en kopia av objektet som _member refererar till. Undviker 
                 // på så sätt en "privacy leak".
-                return this._customer != null ? this._customer.Clone() as Member : null;
+                return this._member != null ? this._member.Clone() as Member : null;
             }
 
             private set
             {
                 // Skapar en kopia av objektet som value refererar till. Undviker 
                 // på så sätt en "privacy leak".
-                this._customer = value != null ? value.Clone() as Member : null;
+                this._member = value != null ? value.Clone() as Member : null;
+            }
+        }
+        public Post Post
+        {
+            get
+            {
+                // Skapar en kopia av objektet som _member refererar till. Undviker 
+                // på så sätt en "privacy leak".
+                return this._post != null ? this._member.Clone() as Post : null;
+            }
+
+            private set
+            {
+                // Skapar en kopia av objektet som value refererar till. Undviker 
+                // på så sätt en "privacy leak".
+                this._post = value != null ? value.Clone() as Post : null;
             }
         }
 
@@ -264,9 +281,14 @@ namespace ITProject14.Shared.UserControls
 
         #region Konstruktorer
 
-        public SavedEventArgs(Member customer)
+        public SavedEventArgs(Member member)
         {
-            Member = customer;
+            Member = member;
+        }
+
+        public SavedEventArgs(Post post)
+        {
+            Post = post;
         }
 
         #endregion

@@ -117,67 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Action_Contact_Deleted" xml:space="preserve">
+  <data name="Action_Post_Deleted" xml:space="preserve">
     <value>Kontaktuppgiften har tagits bort.</value>
   </data>
-  <data name="Action_Contact_Saved" xml:space="preserve">
+  <data name="Action_Post_Saved" xml:space="preserve">
     <value>Kontaktuppgiften har sparats.</value>
   </data>
-  <data name="Action_Customer_Deleted" xml:space="preserve">
+  <data name="Action_Member_Deleted" xml:space="preserve">
     <value>Kunden har tagits bort.</value>
   </data>
-  <data name="Action_Customer_Saved" xml:space="preserve">
+  <data name="Action_Member_Saved" xml:space="preserve">
     <value>Kunden har sparats.</value>
   </data>
   <data name="Action_Unknown" xml:space="preserve">
     <value>Okänd händelse.</value>
   </data>
-  <data name="ContactType_Name_MaxLength" xml:space="preserve">
-    <value>Kontakttypens benämning kan bestå av som mest 50 tecken.</value>
+  <data name="Post_Deleting_Error" xml:space="preserve">
+    <value>An error occured while deleting the post.</value>
   </data>
-  <data name="ContactType_Name_Required" xml:space="preserve">
-    <value>Kontakttypens benämning måste anges.</value>
+  <data name="Post_Inserting_Error" xml:space="preserve">
+    <value>An error occured while inserting the post.</value>
   </data>
-  <data name="ContactType_Selecting_Error" xml:space="preserve">
-    <value>Ett fel inträffade då kunduppgifttyperna skulle hämtas.</value>
+  <data name="Post_Inserting_Unexpected_Error" xml:space="preserve">
+    <value>An unexpected error occured while inserting the post.</value>
   </data>
-  <data name="Contact_Deleting_Error" xml:space="preserve">
-    <value>Ett fel inträffade då kunduppgiften skulle tas bort.</value>
+    <data name="Post_Selecting_Error" xml:space="preserve">
+    <value>An error occured while selecting the post.</value>
   </data>
-  <data name="Contact_Inserting_Error" xml:space="preserve">
-    <value>Ett fel inträffade då kontaktuppgiften skulle läggas till.</value>
+  <data name="Post_Updating_Error" xml:space="preserve">
+    <value>An error occured while updating the post.</value>
   </data>
-  <data name="Contact_Inserting_Unexpected_Error" xml:space="preserve">
-    <value>Ett oväntat fel inträffade då kontaktuppgiften skulle läggas till.</value>
+  <data name="Post_Updating_Unexpected_Error" xml:space="preserve">
+    <value>An unexpected error occured while updating the post.</value>
   </data>
-  <data name="Contact_Selecting_Error" xml:space="preserve">
-    <value>Ett fel inträffade då kunduppgifterna skulle hämtas.</value>
-  </data>
-  <data name="Contact_Updating_Error" xml:space="preserve">
-    <value>Ett fel inträffade då kontaktuppgiften skulle uppdateras.</value>
-  </data>
-  <data name="Contact_Updating_Unexpected_Error" xml:space="preserve">
-    <value>Ett oväntat fel inträffade då kontaktuppgiften skulle uppdateras.</value>
-  </data>
-  <data name="Contact_Value_MaxLength" xml:space="preserve">
+  <data name="Post_Value_MaxLength" xml:space="preserve">
     <value>Kontaktinformationen kan bestå av som mest 50 tecken.</value>
   </data>
-  <data name="Contact_Value_Required" xml:space="preserve">
-    <value>Kontaktinformation måste anges.</value>
+  <data name="Post_Value_Required" xml:space="preserve">
+    <value>You must enter a post.</value>
   </data>
-  <data name="Customer_Delete_Confirm" xml:space="preserve">
+  <data name="Member_Delete_Confirm" xml:space="preserve">
     <value>Är du säker på att du vill ta bort '{0}'?</value>
   </data>
-  <data name="Customer_Deleting_Error" xml:space="preserve">
+  <data name="Member_Deleting_Error" xml:space="preserve">
     <value>Ett fel inträffade då kunden skulle tas bort.</value>
   </data>
-  <data name="Customer_Saving_Error" xml:space="preserve">
+  <data name="Member_Saving_Error" xml:space="preserve">
     <value>Ett fel inträffade då kunden skulle sparas.</value>
   </data>
-  <data name="Data_Type_Contact" xml:space="preserve">
+  <data name="Data_Type_Post" xml:space="preserve">
     <value>kontaktuppgiften</value>
   </data>
-  <data name="Data_Type_Customer" xml:space="preserve">
+  <data name="Data_Type_Member" xml:space="preserve">
     <value>kunden</value>
   </data>
   <data name="Generic_DAL_Error_Message" xml:space="preserve">
@@ -190,19 +181,22 @@
     <value>Your emailaddress is too long. Is this really correct?</value>
   </data>
   <data name="Member_Mail_Required" xml:space="preserve">
-    <value>You must fill in your emailddress.</value>
+    <value>You must enter your emailddress.</value>
+  </data>
+    <data name="Member_Mail_Invalid_Format" xml:space="preserve">
+    <value>You must enter a valid emailaddress.</value>
   </data>
   <data name="Member_Name_MaxLength" xml:space="preserve">
     <value>Your name can contain at a maximum 30 characters.</value>
   </data>
   <data name="Member_Name_Required" xml:space="preserve">
-    <value>You must fill in your name.</value>
+    <value>You must enter your name.</value>
   </data>
   <data name="Member_Password_MaxLength" xml:space="preserve">
     <value>Your password can contain at a minimum 20 characters.</value>
   </data>
   <data name="Member_Password_Required" xml:space="preserve">
-    <value>You must fill in a password.</value>
+    <value>You must enter a password.</value>
   </data>
   <data name="Member_Username_MaxLength" xml:space="preserve">
     <value>Maximum length - 30 characters.</value>

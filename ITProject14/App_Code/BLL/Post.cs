@@ -26,7 +26,7 @@ namespace ITProject14.App_Code.BLL
             // egenskaperna istället för fälten direkt.
             this.MemberId = 0;
             this.PostId = 0;
-            //this.ContactTypeId = 0;
+            //this.PostTypeId = 0;
             this.Value = null;
         }
 
@@ -38,7 +38,7 @@ namespace ITProject14.App_Code.BLL
         // varför det går bra att använda en autoimplementerad egenskap.
         public int MemberId { get; set; }
         public int PostId { get; set; }
-        //public int ContactTypeId { get; set; }
+        //public int PostTypeId { get; set; }
 
         public string Value
         {
@@ -54,13 +54,13 @@ namespace ITProject14.App_Code.BLL
                 {
                     // ...är det ett fel varför nyckeln Value (namnet på egenskapen)
                     // mappas mot ett felmeddelande.
-                    base.ValidationErrors.Add("Value", Strings.Contact_Value_Required);
+                    base.ValidationErrors.Add("Value", Strings.Post_Value_Required);
                 }
                 else if (value.Length > 50)
                 {
                     // Om strängen innehåller fler än 50 tecken kan inte det fullständiga 
                     // datat inte sparas i databastabellen vilket är att betrakta som ett fel.
-                    base.ValidationErrors.Add("Value", Strings.Contact_Value_MaxLength);
+                    base.ValidationErrors.Add("Value", Strings.Post_Value_MaxLength);
                 }
 
                 // Tilldelar fältet värdet, oavsett om det är ett korrekt värde 

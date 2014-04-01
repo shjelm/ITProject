@@ -35,7 +35,7 @@ namespace ITProject14.App_Code.BLL
         #region Egenskaper
 
         // Egenskapernas namn och typ ges av tabellen
-        // Customer i databasen.
+        // Member i databasen.
         public int MemberId { get; set; }
 
         public string Name
@@ -79,7 +79,7 @@ namespace ITProject14.App_Code.BLL
                 // eller tom för i så fall...
                 if (String.IsNullOrWhiteSpace(value))
                 {
-                    // ...är det ett fel varför nyckel Address (namnet på egenskapen)
+                    // ...är det ett fel varför nyckel Username (namnet på egenskapen)
                     // mappas mot ett felmeddelande.
                     this.ValidationErrors.Add("Username", Strings.Member_Username_Required);
                 }
@@ -108,7 +108,7 @@ namespace ITProject14.App_Code.BLL
                 // eller tom för i så fall...
                 if (String.IsNullOrWhiteSpace(value))
                 {
-                    // ...är det ett fel varför nyckel PostalCode (namnet på egenskapen)
+                    // ...är det ett fel varför nyckel Mail (namnet på egenskapen)
                     // mappas mot ett felmeddelande.
                     this.ValidationErrors.Add("Mail", Strings.Member_Mail_Required);
                 }
@@ -137,7 +137,7 @@ namespace ITProject14.App_Code.BLL
                 // eller tom för i så fall...
                 if (String.IsNullOrWhiteSpace(value))
                 {
-                    // ...är det ett fel varför nyckel City (namnet på egenskapen)
+                    // ...är det ett fel varför nyckel Password (namnet på egenskapen)
                     // mappas mot ett felmeddelande.
                     this.ValidationErrors.Add("Password", Strings.Member_Password_Required);
                 }

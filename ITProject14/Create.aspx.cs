@@ -10,16 +10,16 @@ namespace ITProject14
 {
     public partial class Create : System.Web.UI.Page
     {
-        protected void MemberEdit_Saved(object sender, SavedEventArgs e)
+        protected void PostEdit_Saved(object sender, SavedEventArgs e)
         {
             // Kunduppgifterna sparade varför användaren dirigeras till en
             // rättmeddelandesida.
-            string url = String.Format("~/Success.aspx?returnUrl=~/Details.aspx?id={0}&action=Member_Saved",
-                e.Member.MemberId);
+            string url = String.Format("~/Success.aspx?returnUrl=~/Details.aspx?id={0}&action=Post_Saved",
+                e.Post.PostId);
             Response.Redirect(url, false);
         }
 
-        protected void MemberEdit_Canceled(object sender, EventArgs e)
+        protected void PostEdit_Canceled(object sender, EventArgs e)
         {
             // Kunduppgifterna inte sparade varför användaren dirigeras till startsidan.
             Response.Redirect("~/", false);

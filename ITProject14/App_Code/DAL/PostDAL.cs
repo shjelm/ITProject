@@ -17,7 +17,7 @@ namespace ITProject14.App_Code.DAL
         /// <summary>
         /// Hämtar en kunds kontaktuppgifter i databasen.
         /// </summary>
-        /// <returns>Lista med referenser till Contact-objekt.</returns>
+        /// <returns>Lista med referenser till Post-objekt.</returns>
         //public List<Post> GetPostByMemberId(int memberId)
         //{
         //    // Skapar ett anslutningsobjekt.
@@ -34,7 +34,7 @@ namespace ITProject14.App_Code.DAL
         //            // sätttet att göra det på - enkelt, men ASP.NET behöver "jobba" rätt mycket.
         //            cmd.Parameters.AddWithValue("@MemberId", memberId);
 
-        //            // Skapar det List-objekt som initialt har plats för 10 referenser till Contact-objekt.
+        //            // Skapar det List-objekt som initialt har plats för 10 referenser till Post-objekt.
         //            List<Post> posts = new List<Post>(10);
 
         //            // Öppnar anslutningen till databasen.
@@ -50,7 +50,7 @@ namespace ITProject14.App_Code.DAL
         //                // i vilken ordning de olika kolumnerna kommer, bara vad de heter.
         //                int memberIdIndex = reader.GetOrdinal("MemberId");
         //                int postIdIndex = reader.GetOrdinal("PostId");
-        //                int contactTypeIdIndex = reader.GetOrdinal("ContactTypeId");
+        //                int contactTypeIdIndex = reader.GetOrdinal("PostTypeId");
         //                int valueIndex = reader.GetOrdinal("Value");
 
         //                // Så länge som det finns poster att läsa returnerar Read true. Finns det inte fler 
@@ -63,7 +63,7 @@ namespace ITProject14.App_Code.DAL
         //                    {
         //                        MemberId = reader.GetInt32(memberIdIndex),
         //                        PostId = reader.GetInt32(postIdIndex),
-        //                        ContactTypeId = reader.GetInt32(contactTypeIdIndex),
+        //                        PostTypeId = reader.GetInt32(contactTypeIdIndex),
         //                        Value = reader.GetString(valueIndex)
         //                    });
         //                }
@@ -73,7 +73,7 @@ namespace ITProject14.App_Code.DAL
         //            // som inte används.
         //            posts.TrimExcess();
 
-        //            // Returnerar referensen till List-objektet med referenser med Contact-objekt.
+        //            // Returnerar referensen till List-objektet med referenser med Post-objekt.
         //            return posts;
         //        }
         //        catch
@@ -100,7 +100,7 @@ namespace ITProject14.App_Code.DAL
 
                     // Skapar och initierar ett SqlCommand-objekt som används till att 
                     // exekveras specifierad lagrad procedur.
-                    var cmd = new MySqlCommand("app.uspGetPosts", conn); //@TODO: Här ska en lagrad procedur som hämtar ut alla medlemmar skrivas
+                    var cmd = new MySqlCommand("GetPosts", conn); //@TODO: Här ska en lagrad procedur som hämtar ut alla medlemmar skrivas
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Öppnar anslutningen till databasen.
@@ -137,7 +137,7 @@ namespace ITProject14.App_Code.DAL
                     // som inte används.
                     posts.TrimExcess();
 
-                    // Returnerar referensen till List-objektet med referenser med Customer-objekt.
+                    // Returnerar referensen till List-objektet med referenser med Member-objekt.
                     return posts;
                 }
                 catch
@@ -150,8 +150,8 @@ namespace ITProject14.App_Code.DAL
         /// <summary>
         /// Hämtar en kontaktuppgift.
         /// </summary>
-        /// <param name="customerId">En kontaktuppgifts nummer.</param>
-        /// <returns>Ett Contact-objekt med en kontaktuppgifter.</returns>
+        /// <param name="memberId">En kontaktuppgifts nummer.</param>
+        /// <returns>Ett Post-objekt med en kontaktuppgifter.</returns>
         public Post GetPostByPostId(int postId)
         {
             // Skapar ett anslutningsobjekt.
@@ -161,7 +161,7 @@ namespace ITProject14.App_Code.DAL
                 {
                     // Skapar och initierar ett SqlCommand-objekt som används till att 
                     // exekveras specifierad lagrad procedur.
-                    MySqlCommand cmd = new MySqlCommand("app.uspGetPost", conn);
+                    MySqlCommand cmd = new MySqlCommand("GetPost", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Lägger till den paramter den lagrade proceduren kräver. Använder här det MINDRE effektiva 
@@ -187,12 +187,12 @@ namespace ITProject14.App_Code.DAL
                             int postIdIndex = reader.GetOrdinal("PostId");
                             int valueIndex = reader.GetOrdinal("Value");
 
-                            // Returnerar referensen till de skapade Contact-objektet.
+                            // Returnerar referensen till de skapade Post-objektet.
                             return new Post
                             {
                                 MemberId = reader.GetInt32(memberIdIndex),
                                 PostId = reader.GetInt32(postIdIndex),
-                                //ContactTypeId = reader.GetInt32(contactTypeIdIndex),
+                                //PostTypeId = reader.GetInt32(contactTypeIdIndex),
                                 Value = reader.GetString(valueIndex)
                             };
                         }
@@ -212,9 +212,9 @@ namespace ITProject14.App_Code.DAL
         }
 
         /// <summary>
-        /// Skapar en ny post i tabellen Contact.
+        /// Skapar en ny post i tabellen Post.
         /// </summary>
-        /// <param name="customer">Kontaktuppgift som ska läggas till.</param>
+        /// <param name="member">Kontaktuppgift som ska läggas till.</param>
         public void InsertPost(Post post)
         {
             // Skapar ett anslutningsobjekt.
@@ -224,7 +224,7 @@ namespace ITProject14.App_Code.DAL
                 {
                     // Skapar och initierar ett SqlCommand-objekt som används till att 
                     // exekveras specifierad lagrad procedur.
-                    MySqlCommand cmd = new MySqlCommand("app.uspInsertPost", conn);
+                    MySqlCommand cmd = new MySqlCommand("InsertPost", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Lägger till de paramterar den lagrade proceduren kräver. Använder här det effektiva sätttet att
@@ -245,8 +245,8 @@ namespace ITProject14.App_Code.DAL
                     // ExecuteNonQuery används för att exekvera den lagrade proceduren.
                     cmd.ExecuteNonQuery();
 
-                    // Hämtar primärnyckelns värde för den nya posten och tilldelar Customer-objektet värdet.
-                    post.MemberId = (int)cmd.Parameters["@PostId"].Value;
+                    // Hämtar primärnyckelns värde för den nya posten och tilldelar Member-objektet värdet.
+                    post.PostId = (int)cmd.Parameters["@PostId"].Value;
                 }
                 catch
                 {
@@ -257,9 +257,9 @@ namespace ITProject14.App_Code.DAL
         }
 
         /// <summary>
-        /// Uppdaterar en kunds kontaktuppgifter i tabellen Contact.
+        /// Uppdaterar en kunds kontaktuppgifter i tabellen Post.
         /// </summary>
-        /// <param name="customer">KOntaktuppgift som ska uppdateras.</param>
+        /// <param name="member">KOntaktuppgift som ska uppdateras.</param>
         public void UpdatePost(Post post)
         {
             // Skapar ett anslutningsobjekt.
@@ -269,7 +269,7 @@ namespace ITProject14.App_Code.DAL
                 {
                     // Skapar och initierar ett SqlCommand-objekt som används till att 
                     // exekveras specifierad lagrad procedur.
-                    MySqlCommand cmd = new MySqlCommand("app.uspUpdatePost", conn);
+                    MySqlCommand cmd = new MySqlCommand("UpdatePost", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Lägger till de paramterar den lagrade proceduren kräver. Använder här det effektiva sätttet att
@@ -296,7 +296,7 @@ namespace ITProject14.App_Code.DAL
         /// <summary>
         /// Tar bort en kontaktuppgift.
         /// </summary>
-        /// <param name="customerId">Kontaktuppgifts nummer.</param>
+        /// <param name="memberId">Kontaktuppgifts nummer.</param>
         public void DeletePost(int postId)
         {
             // Skapar ett anslutningsobjekt.
@@ -306,7 +306,7 @@ namespace ITProject14.App_Code.DAL
                 {
                     // Skapar och initierar ett SqlCommand-objekt som används till att 
                     // exekveras specifierad lagrad procedur.
-                    MySqlCommand cmd = new MySqlCommand("app.uspDeletePost", conn);
+                    MySqlCommand cmd = new MySqlCommand("DeletePost", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Lägger till de paramterar den lagrade proceduren kräver. Använder här det effektiva sätttet att

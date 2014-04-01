@@ -1,0 +1,5 @@
+G:\ITProject14\ITProject14\bin\ITProject14.dll
+G:\ITProject14\ITProject14\bin\ITProject14.pdb
+G:\ITProject14\ITProject14\obj\Release\ITProject14.csprojResolveAssemblyReference.cache
+G:\ITProject14\ITProject14\obj\Release\ITProject14.dll
+G:\ITProject14\ITProject14\obj\Release\ITProject14.pdb

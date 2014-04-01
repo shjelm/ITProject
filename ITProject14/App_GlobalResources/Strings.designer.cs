@@ -61,38 +61,38 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kontaktuppgiften har tagits bort..
-        /// </summary>
-        internal static string Action_Contact_Deleted {
-            get {
-                return ResourceManager.GetString("Action_Contact_Deleted", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kontaktuppgiften har sparats..
-        /// </summary>
-        internal static string Action_Contact_Saved {
-            get {
-                return ResourceManager.GetString("Action_Contact_Saved", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Kunden har tagits bort..
         /// </summary>
-        internal static string Action_Customer_Deleted {
+        internal static string Action_Member_Deleted {
             get {
-                return ResourceManager.GetString("Action_Customer_Deleted", resourceCulture);
+                return ResourceManager.GetString("Action_Member_Deleted", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Kunden har sparats..
         /// </summary>
-        internal static string Action_Customer_Saved {
+        internal static string Action_Member_Saved {
             get {
-                return ResourceManager.GetString("Action_Customer_Saved", resourceCulture);
+                return ResourceManager.GetString("Action_Member_Saved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kontaktuppgiften har tagits bort..
+        /// </summary>
+        internal static string Action_Post_Deleted {
+            get {
+                return ResourceManager.GetString("Action_Post_Deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kontaktuppgiften har sparats..
+        /// </summary>
+        internal static string Action_Post_Saved {
+            get {
+                return ResourceManager.GetString("Action_Post_Saved", resourceCulture);
             }
         }
         
@@ -106,146 +106,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kontakttypens benämning kan bestå av som mest 50 tecken..
+        ///   Looks up a localized string similar to kunden.
         /// </summary>
-        internal static string ContactType_Name_MaxLength {
+        internal static string Data_Type_Member {
             get {
-                return ResourceManager.GetString("ContactType_Name_MaxLength", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kontakttypens benämning måste anges..
-        /// </summary>
-        internal static string ContactType_Name_Required {
-            get {
-                return ResourceManager.GetString("ContactType_Name_Required", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ett fel inträffade då kunduppgifttyperna skulle hämtas..
-        /// </summary>
-        internal static string ContactType_Selecting_Error {
-            get {
-                return ResourceManager.GetString("ContactType_Selecting_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ett fel inträffade då kunduppgiften skulle tas bort..
-        /// </summary>
-        internal static string Contact_Deleting_Error {
-            get {
-                return ResourceManager.GetString("Contact_Deleting_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ett fel inträffade då kontaktuppgiften skulle läggas till..
-        /// </summary>
-        internal static string Contact_Inserting_Error {
-            get {
-                return ResourceManager.GetString("Contact_Inserting_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ett oväntat fel inträffade då kontaktuppgiften skulle läggas till..
-        /// </summary>
-        internal static string Contact_Inserting_Unexpected_Error {
-            get {
-                return ResourceManager.GetString("Contact_Inserting_Unexpected_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ett fel inträffade då kunduppgifterna skulle hämtas..
-        /// </summary>
-        internal static string Contact_Selecting_Error {
-            get {
-                return ResourceManager.GetString("Contact_Selecting_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ett fel inträffade då kontaktuppgiften skulle uppdateras..
-        /// </summary>
-        internal static string Contact_Updating_Error {
-            get {
-                return ResourceManager.GetString("Contact_Updating_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ett oväntat fel inträffade då kontaktuppgiften skulle uppdateras..
-        /// </summary>
-        internal static string Contact_Updating_Unexpected_Error {
-            get {
-                return ResourceManager.GetString("Contact_Updating_Unexpected_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kontaktinformationen kan bestå av som mest 50 tecken..
-        /// </summary>
-        internal static string Contact_Value_MaxLength {
-            get {
-                return ResourceManager.GetString("Contact_Value_MaxLength", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kontaktinformation måste anges..
-        /// </summary>
-        internal static string Contact_Value_Required {
-            get {
-                return ResourceManager.GetString("Contact_Value_Required", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Är du säker på att du vill ta bort &apos;{0}&apos;?.
-        /// </summary>
-        internal static string Customer_Delete_Confirm {
-            get {
-                return ResourceManager.GetString("Customer_Delete_Confirm", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ett fel inträffade då kunden skulle tas bort..
-        /// </summary>
-        internal static string Customer_Deleting_Error {
-            get {
-                return ResourceManager.GetString("Customer_Deleting_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ett fel inträffade då kunden skulle sparas..
-        /// </summary>
-        internal static string Customer_Saving_Error {
-            get {
-                return ResourceManager.GetString("Customer_Saving_Error", resourceCulture);
+                return ResourceManager.GetString("Data_Type_Member", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to kontaktuppgiften.
         /// </summary>
-        internal static string Data_Type_Contact {
+        internal static string Data_Type_Post {
             get {
-                return ResourceManager.GetString("Data_Type_Contact", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to kunden.
-        /// </summary>
-        internal static string Data_Type_Customer {
-            get {
-                return ResourceManager.GetString("Data_Type_Customer", resourceCulture);
+                return ResourceManager.GetString("Data_Type_Post", resourceCulture);
             }
         }
         
@@ -268,6 +142,33 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Är du säker på att du vill ta bort &apos;{0}&apos;?.
+        /// </summary>
+        internal static string Member_Delete_Confirm {
+            get {
+                return ResourceManager.GetString("Member_Delete_Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ett fel inträffade då kunden skulle tas bort..
+        /// </summary>
+        internal static string Member_Deleting_Error {
+            get {
+                return ResourceManager.GetString("Member_Deleting_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a valid emailaddress..
+        /// </summary>
+        internal static string Member_Mail_Invalid_Format {
+            get {
+                return ResourceManager.GetString("Member_Mail_Invalid_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your emailaddress is too long. Is this really correct?.
         /// </summary>
         internal static string Member_Mail_MaxLength {
@@ -277,7 +178,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You must fill in your emailddress..
+        ///   Looks up a localized string similar to You must enter your emailddress..
         /// </summary>
         internal static string Member_Mail_Required {
             get {
@@ -295,7 +196,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You must fill in your name..
+        ///   Looks up a localized string similar to You must enter your name..
         /// </summary>
         internal static string Member_Name_Required {
             get {
@@ -313,11 +214,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You must fill in a password..
+        ///   Looks up a localized string similar to You must enter a password..
         /// </summary>
         internal static string Member_Password_Required {
             get {
                 return ResourceManager.GetString("Member_Password_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ett fel inträffade då kunden skulle sparas..
+        /// </summary>
+        internal static string Member_Saving_Error {
+            get {
+                return ResourceManager.GetString("Member_Saving_Error", resourceCulture);
             }
         }
         
@@ -336,6 +246,78 @@ namespace Resources {
         internal static string Member_Username_Required {
             get {
                 return ResourceManager.GetString("Member_Username_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occured while deleting the post..
+        /// </summary>
+        internal static string Post_Deleting_Error {
+            get {
+                return ResourceManager.GetString("Post_Deleting_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occured while inserting the post..
+        /// </summary>
+        internal static string Post_Inserting_Error {
+            get {
+                return ResourceManager.GetString("Post_Inserting_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An unexpected error occured while inserting the post..
+        /// </summary>
+        internal static string Post_Inserting_Unexpected_Error {
+            get {
+                return ResourceManager.GetString("Post_Inserting_Unexpected_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occured while selecting the post..
+        /// </summary>
+        internal static string Post_Selecting_Error {
+            get {
+                return ResourceManager.GetString("Post_Selecting_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occured while updating the post..
+        /// </summary>
+        internal static string Post_Updating_Error {
+            get {
+                return ResourceManager.GetString("Post_Updating_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An unexpected error occured while updating the post..
+        /// </summary>
+        internal static string Post_Updating_Unexpected_Error {
+            get {
+                return ResourceManager.GetString("Post_Updating_Unexpected_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kontaktinformationen kan bestå av som mest 50 tecken..
+        /// </summary>
+        internal static string Post_Value_MaxLength {
+            get {
+                return ResourceManager.GetString("Post_Value_MaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a post..
+        /// </summary>
+        internal static string Post_Value_Required {
+            get {
+                return ResourceManager.GetString("Post_Value_Required", resourceCulture);
             }
         }
         

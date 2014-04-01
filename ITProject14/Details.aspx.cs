@@ -51,10 +51,10 @@ namespace ITProject14
                 DeleteButton.Enabled = true;
 
                 // Användar unobtrusive JavaScript istället för följande två rader.
-                //   string prompt = String.Format("return confirm(\"{0}\");", Strings.Customer_Delete_Confirm);
-                //   DeleteButton.OnClientClick = String.Format(prompt, customer.Name);
+                //   string prompt = String.Format("return confirm(\"{0}\");", Strings.Member_Delete_Confirm);
+                //   DeleteButton.OnClientClick = String.Format(prompt, member.Name);
                 DeleteButton.CssClass = "delete-action";
-                DeleteButton.Attributes.Add("data-type", Strings.Data_Type_Customer);
+                DeleteButton.Attributes.Add("data-type", Strings.Data_Type_Member);
                 DeleteButton.Attributes.Add("data-value", member.Name);
             }
             else
@@ -73,7 +73,7 @@ namespace ITProject14
                 // rättmeddelandesida, eller så...
                 Service service = new Service();
                 service.DeleteMember(Convert.ToInt32(e.CommandArgument));
-                Response.Redirect("~/Success.aspx?returnUrl=~/Default.aspx&action=Customer_Deleted");
+                Response.Redirect("~/Success.aspx?returnUrl=~/Default.aspx&action=Member_Deleted");
             }
             catch
             {
@@ -81,7 +81,7 @@ namespace ITProject14
                 var validator = new CustomValidator
                 {
                     IsValid = false,
-                    ErrorMessage = Strings.Customer_Deleting_Error
+                    ErrorMessage = Strings.Member_Deleting_Error
                 };
 
                 Page.Validators.Add(validator);

@@ -4,7 +4,7 @@
 <html>
 <head id="Head1" runat="server">
     <meta charset="utf-8" />
-    <title>Kundkontakter (version 5, flera sidor)</title>
+    <title>Topicmaster</title>
     <link rel="icon" href="~/Content/Images/favicon.ico" type="image/x-icon" />
     <script src="<%# ResolveClientUrl("~/Scripts/modernizr-1.7.min.js")%>" type="text/javascript"></script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
@@ -14,15 +14,8 @@
     <div id="page">
         <header>
             <div id="header-wrapper">
-                <div id="top">
-                    <ul>
-                        <li>1DV406, ASP.NET Web Forms</li>
-                        <li>Föreläsning</li>
-                        <li>Example</li>
-                    </ul>
-                </div>
                 <h1 id="title">
-                    Kundkontakter <span>(version 5, flera sidor)</span></h1>
+                    Topic master</h1>
             </div>
             <nav>
                 <ul id="menu">
@@ -36,8 +29,7 @@
         </section>
         <footer>
             <ul>
-                <li>&copy; 2012 Mats Loock</li>
-                <li>Linnéuniversitetet | Institutionen för datavetenskap, fysik och matematik</li>
+                <li>&copy; 2014 Sofia&Benny</li>
             </ul>
         </footer>
     </div>

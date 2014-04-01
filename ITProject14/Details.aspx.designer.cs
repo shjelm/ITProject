@@ -13,13 +13,13 @@ namespace ITProject14 {
     public partial class Details {
         
         /// <summary>
-        /// CustomerValidationSummary control.
+        /// MemberValidationSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary CustomerValidationSummary;
+        protected global::System.Web.UI.WebControls.ValidationSummary MemberValidationSummary;
         
         /// <summary>
         /// Label1 control.
@@ -94,13 +94,13 @@ namespace ITProject14 {
         protected global::System.Web.UI.WebControls.Label PasswordLabel;
         
         /// <summary>
-        /// ContactEdit1 control.
+        /// PostEdit1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ITProject14.Shared.UserControls.ContactEdit ContactEdit1;
+        protected global::ITProject14.Shared.UserControls.PostEdit PostEdit1;
         
         /// <summary>
         /// EditButton control.

@@ -10,42 +10,60 @@
 namespace ITProject14.Shared.UserControls {
     
     
-    public partial class ContactEdit {
+    public partial class PostEdit {
         
         /// <summary>
-        /// ContactDataSource control.
+        /// PostValidationSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ContactDataSource;
+        protected global::System.Web.UI.WebControls.ValidationSummary PostValidationSummary;
         
         /// <summary>
-        /// ContactListView control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ContactListView;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// ReadOnlyView control.
+        /// ValueTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View ReadOnlyView;
+        protected global::System.Web.UI.WebControls.TextBox ValueTextBox;
         
         /// <summary>
-        /// ContactReadOnlyListView control.
+        /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ContactReadOnlyListView;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
+        /// SaveButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SaveButton;
+        
+        /// <summary>
+        /// CancelButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton CancelButton;
     }
 }

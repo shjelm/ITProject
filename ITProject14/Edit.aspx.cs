@@ -15,16 +15,16 @@ namespace ITProject14
         {
             if (!IsPostBack)
             {
-                Member customer = null;
+                Member member = null;
 
                 try
                 {
                     // ...hämta kundnumret från "query string"-variabeln,...
-                    int customerId = Convert.ToInt32(Request.QueryString["id"]);
+                    int memberId = Convert.ToInt32(Request.QueryString["id"]);
 
                     // ...hämta kunduppgifterna och...
                     Service service = new Service();
-                    customer = service.GetMember(customerId);
+                    member = service.GetMember(memberId);
                 }
                 catch
                 {
@@ -32,16 +32,16 @@ namespace ITProject14
                 }
 
                 // ...kontrollera om det verkligen finns några kunduppgifter, i så fall så...
-                if (customer != null)
+                if (member != null)
                 {
-                    MemberEdit MyCustomerEdit = new MemberEdit();
+                    MemberEdit MyMemberEdit = new MemberEdit();
 
                     // ...presentera dem.
-                    MyCustomerEdit.CustomerId = customer.MemberId;
-                    MyCustomerEdit.Name = customer.Name;
-                    MyCustomerEdit.Mail = customer.Mail;
-                    MyCustomerEdit.Username = customer.Username;
-                    MyCustomerEdit.Password = customer.Password;
+                    MyMemberEdit.MemberId = member.MemberId;
+                    MyMemberEdit.Name = member.Name;
+                    MyMemberEdit.Mail = member.Mail;
+                    MyMemberEdit.Username = member.Username;
+                    MyMemberEdit.Password = member.Password;
                 }
                 else
                 {
@@ -56,7 +56,7 @@ namespace ITProject14
         {
             // Kunduppgifterna sparade varför användaren dirigeras till en
             // rättmeddelandesida.
-            Response.Redirect(String.Format("~/Success.aspx?returnUrl=Details.aspx?id={0}&action=Customer_Saved",
+            Response.Redirect(String.Format("~/Success.aspx?returnUrl=Details.aspx?id={0}&action=Member_Saved",
                 e.Member.MemberId), false);
         }
 

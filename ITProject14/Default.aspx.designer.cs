@@ -22,12 +22,12 @@ namespace ITProject14 {
         protected global::System.Web.UI.WebControls.ObjectDataSource ServiceObjectDataSource;
         
         /// <summary>
-        /// CustomerListView control.
+        /// MemberListView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView CustomerListView;
+        protected global::System.Web.UI.WebControls.ListView MemberListView;
     }
 }

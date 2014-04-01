@@ -12,7 +12,7 @@ using MySql.Data.MySqlClient;
 namespace ITProject14.App_Code.DAL
 {
     /// <summary>
-    /// Klassen CustomerDAL.
+    /// Klassen MemberDAL.
     /// </summary>
     [DataObject(false)]
     public class MemberDAL : DALBase
@@ -22,7 +22,7 @@ namespace ITProject14.App_Code.DAL
         /// <summary>
         /// Hämtar alla kunder i databasen.
         /// </summary>
-        /// <returns>Lista med referenser till Customer-objekt.</returns>
+        /// <returns>Lista med referenser till Member-objekt.</returns>
         public List<Member> GetMembers()
         {
             // Skapar och initierar ett anslutningsobjekt.
@@ -31,7 +31,7 @@ namespace ITProject14.App_Code.DAL
                 try
                 {
                     // Skapar det List-objekt som initialt har plats för 100 referenser till Member-objekt.
-                    var customers = new List<Member>(100);
+                    var members = new List<Member>(100);
 
                     // Skapar och initierar ett SqlCommand-objekt som används till att 
                     // exekveras specifierad lagrad procedur.
@@ -61,7 +61,7 @@ namespace ITProject14.App_Code.DAL
                         {
                             // Hämtar ut datat för en post. Använder GetXxx-metoder - vilken beror av typen av data.
                             // Du måste känna till SQL-satsen för att kunna välja rätt GetXxx-metod.
-                            customers.Add(new Member
+                            members.Add(new Member
                             {
                                 MemberId = reader.GetInt32(memberIdIndex),
                                 Name = reader.GetString(nameIndex),
@@ -74,10 +74,10 @@ namespace ITProject14.App_Code.DAL
 
                     // Sätter kapaciteten till antalet element i List-objektet, d.v.s. avallokerar minne
                     // som inte används.
-                    customers.TrimExcess();
+                    members.TrimExcess();
 
-                    // Returnerar referensen till List-objektet med referenser med Customer-objekt.
-                    return customers;
+                    // Returnerar referensen till List-objektet med referenser med Member-objekt.
+                    return members;
                 }
                 catch
                 {
@@ -90,7 +90,7 @@ namespace ITProject14.App_Code.DAL
         /// Hämtar en kunds kunduppgifter.
         /// </summary>
         /// <param name="memberId">En kunds kundnummer.</param>
-        /// <returns>Ett Customer-objekt med en kunds kunduppgifter.</returns>
+        /// <returns>Ett Member-objekt med en kunds kunduppgifter.</returns>
         public Member GetMemberById(int memberId)
         {
             // Skapar och initierar ett anslutningsobjekt.
@@ -128,7 +128,7 @@ namespace ITProject14.App_Code.DAL
                             int passwordIndex = reader.GetOrdinal("Password");
                             int usernameIndex = reader.GetOrdinal("Username");
 
-                            // Returnerar referensen till de skapade Contact-objektet.
+                            // Returnerar referensen till de skapade Post-objektet.
                             return new Member
                             {
                                 MemberId = reader.GetInt32(memberIdIndex),
@@ -154,7 +154,7 @@ namespace ITProject14.App_Code.DAL
         }
 
         /// <summary>
-        /// Skapar en ny post i tabellen Customer.
+        /// Skapar en ny post i tabellen Member.
         /// </summary>
         /// <param name="member">Kunduppgifter som ska läggas till.</param>
         public void InsertMember(Member member)
@@ -191,7 +191,7 @@ namespace ITProject14.App_Code.DAL
                     // ExecuteNonQuery används för att exekvera den lagrade proceduren.
                     cmd.ExecuteNonQuery();
 
-                    // Hämtar primärnyckelns värde för den nya posten och tilldelar Customer-objektet värdet.
+                    // Hämtar primärnyckelns värde för den nya posten och tilldelar Member-objektet värdet.
                     member.MemberId = (int)cmd.Parameters["@MemberId"].Value;
                 }
                 catch
@@ -203,7 +203,7 @@ namespace ITProject14.App_Code.DAL
         }
 
         /// <summary>
-        /// Uppdaterar en kunds kunduppgifter i tabellen Customer.
+        /// Uppdaterar en kunds kunduppgifter i tabellen Member.
         /// </summary>
         /// <param name="member">Kunduppgifter som ska uppdateras.</param>
         public void UpdateMember(Member member)

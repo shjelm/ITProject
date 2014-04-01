@@ -13,13 +13,13 @@ namespace ITProject14.Shared.UserControls {
     public partial class MemberEdit {
         
         /// <summary>
-        /// CustomerValidationSummary control.
+        /// MemberValidationSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary CustomerValidationSummary;
+        protected global::System.Web.UI.WebControls.ValidationSummary MemberValidationSummary;
         
         /// <summary>
         /// Label1 control.
@@ -58,13 +58,13 @@ namespace ITProject14.Shared.UserControls {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// AddressTextBox control.
+        /// UsernameTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AddressTextBox;
+        protected global::System.Web.UI.WebControls.TextBox UsernameTextBox;
         
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -85,13 +85,13 @@ namespace ITProject14.Shared.UserControls {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// PostalCodeTextBox control.
+        /// MailTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PostalCodeTextBox;
+        protected global::System.Web.UI.WebControls.TextBox MailTextBox;
         
         /// <summary>
         /// RequiredFieldValidator3 control.
@@ -121,13 +121,13 @@ namespace ITProject14.Shared.UserControls {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// CityTextBox control.
+        /// PasswordTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CityTextBox;
+        protected global::System.Web.UI.WebControls.TextBox PasswordTextBox;
         
         /// <summary>
         /// RequiredFieldValidator4 control.
@@ -139,13 +139,13 @@ namespace ITProject14.Shared.UserControls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
-        /// ContactEdit1 control.
+        /// PostEdit1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ITProject14.Shared.UserControls.ContactEdit ContactEdit1;
+        protected global::ITProject14.Shared.UserControls.PostEdit PostEdit1;
         
         /// <summary>
         /// SaveButton control.
